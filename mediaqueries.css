@@ -1,103 +1,143 @@
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-}
+/* ═══════════════════════════════════════════════════
+   YANNIS ZONGO PORTFOLIO — mediaqueries.css
+═══════════════════════════════════════════════════ */
 
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
-  section,
-  .section-container {
-    height: fit-content;
-  }
+/* ── Tablet (≤ 1024px) ─────────────────────────── */
+@media screen and (max-width: 1024px) {
   section {
-    margin: 0 5%;
+    padding: 5rem 3rem;
   }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
+
+  #about {
+    padding: 5rem 3rem;
   }
-  .about-containers {
-    margin-top: 0;
+
+  footer {
+    padding: 2rem 3rem;
+  }
+
+  #desktop-nav {
+    padding: 0 3rem;
+  }
+
+  #profile {
+    gap: 2.5rem;
+  }
+
+  .hero-badge-grid {
+    width: 220px;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
-  }
+/* ── Switch to hamburger nav (≤ 900px) ─────────── */
+@media screen and (max-width: 900px) {
+  #desktop-nav  { display: none; }
+  #hamburger-nav { display: flex; }
+
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
-  }
-  article {
-    font-size: 1rem;
-  }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
     flex-direction: column;
-    gap: 0.5rem;
+    min-height: auto;
+    padding: 3rem 1.5rem 4rem;
     text-align: center;
+    align-items: center;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
+
+  .hero-text { order: 1; }
+
+  .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-container {
     justify-content: center;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
+
+  .socials-row {
+    justify-content: center;
   }
-  .title {
-    font-size: 2rem;
+
+  .hero-badge-grid {
+    order: 2;
+    width: 100%;
+    max-width: 320px;
+    grid-template-columns: repeat(4, 1fr);
   }
-  .text-container {
-    text-align: justify;
+}
+
+/* ── Mobile (≤ 640px) ──────────────────────────── */
+@media screen and (max-width: 640px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+
+  #about {
+    padding: 4rem 1.25rem;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-pic-wrap {
+    flex: none;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .about-pic {
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero-badge-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 260px;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 360px;
+    min-width: unset;
+  }
+
+  .timeline {
+    padding-left: 1.75rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-filters {
+    gap: 0.4rem;
   }
 }
