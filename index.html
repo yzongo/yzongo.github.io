@@ -9,6 +9,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
+
+  <!-- ── Internship availability badge (can be moved into style.css) ── -->
+  <style>
+    .availability-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .45rem 1rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(34, 197, 94, .4);
+      border-radius: 999px;
+      background: rgba(34, 197, 94, .08);
+      font-size: .85rem;
+      font-weight: 500;
+      line-height: 1.3;
+      text-decoration: none;
+      color: inherit;
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .availability-pill:hover {
+      background: rgba(34, 197, 94, .15);
+      border-color: rgba(34, 197, 94, .7);
+    }
+    .pulse-dot {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, .6);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      70%  { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pulse-dot { animation: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -50,16 +90,20 @@
   ════════════════════════════ -->
   <section id="profile">
     <div class="hero-text">
+      <a href="#contact" class="availability-pill">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        Looking for a summer 2027 internship · ML / Deep Learning · June → Sept
+      </a>
       <span class="eyebrow">Electronics &amp; Computer Engineering · INSA Rennes</span>
       <h1>Hi, I'm <em>Yannis</em><span class="dot">.</span></h1>
       <p class="hero-sub">
-        I build things where hardware, software, and data meet.
-        From embedded systems to Power BI dashboards — I'm here to learn
-        fast and ship real work.
+        I build things where hardware, software, and data meet —
+        from ML research (ICML 2026) and medical imaging to embedded systems.
+        I'm here to learn fast and ship real work.
       </p>
       <div class="btn-container">
         <a class="btn btn-primary" href="./Assets/Resume_new.pdf" target="_blank" rel="noopener">Download CV</a>
-        <a class="btn btn-ghost"   href="#contact">Say hello →</a>
+        <a class="btn btn-ghost"   href="#contact">Hire me for summer 2027 →</a>
       </div>
       <div class="socials-row" aria-label="Social links">
         <a href="https://www.linkedin.com/in/yannis-zongo-b16805253" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -73,16 +117,16 @@
 
     <div class="hero-badge-grid">
       <div class="badge-card">
+        <span class="badge-num">ICML</span>
+        <span class="badge-label">2026 Paper</span>
+      </div>
+      <div class="badge-card">
         <span class="badge-num">3</span>
         <span class="badge-label">Internships</span>
       </div>
       <div class="badge-card">
-        <span class="badge-num">3+</span>
-        <span class="badge-label">Years @ INSA</span>
-      </div>
-      <div class="badge-card">
-        <span class="badge-num">4</span>
-        <span class="badge-label">Languages</span>
+        <span class="badge-num">4th</span>
+        <span class="badge-label">Year @ INSA</span>
       </div>
       <div class="badge-card">
         <span class="badge-num">TEDx</span>
@@ -105,13 +149,19 @@
 
       <div class="about-text-block">
         <p>
-          I'm a third-year electronics and computer engineering student at INSA Rennes
-          with a strong interest in how hardware, software, and data come together to
-          solve real-world problems.
+          I'm a fourth-year electronics and computer engineering student at INSA Rennes,
+          on the Research &amp; Innovation track, with a strong interest in how hardware,
+          software, and data come together to solve real-world problems.
         </p>
         <p>
-          I've worked on projects ranging from embedded systems and signal processing
-          to data analytics and dashboard automation. During a recent internship in
+          My focus today is machine learning. I co-authored a paper published at
+          <strong>ICML 2026</strong> on catastrophic forgetting in fine-tuned LLMs, and
+          I'm currently working at IETR on automatic segmentation of adrenal lesions
+          in CT imaging — where deep learning meets medical imaging.
+        </p>
+        <p>
+          I've also worked on projects ranging from embedded systems and signal processing
+          to data analytics and dashboard automation. During an internship in
           Nairobi, I helped build Power BI tools to streamline financial reporting —
           which deepened both my technical skills and my curiosity for the intersection
           of tech and finance.
@@ -125,6 +175,10 @@
 
         <div class="skills-chips">
           <span class="chip">Python</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Deep Learning</span>
+          <span class="chip">Mechanistic Interpretability</span>
+          <span class="chip">Medical Imaging</span>
           <span class="chip">Java &amp; OOP</span>
           <span class="chip">C</span>
           <span class="chip">PostgreSQL</span>
@@ -133,7 +187,7 @@
           <span class="chip">Git</span>
           <span class="chip">Embedded Systems</span>
           <span class="chip">Signal Processing</span>
-          <span class="chip">CubeMX & CubeIDE</span>
+          <span class="chip">CubeMX &amp; CubeIDE</span>
           <span class="chip">Keil microVision</span>
           <span class="chip">Orcad Pspice</span>
           <span class="chip">Quartus Prime</span>
@@ -240,6 +294,21 @@
            That's it — the filter system picks it up automatically.
       ══════════════════════════════════════════════════════════ -->
 
+      <!-- ── RESEARCH (shown first: strongest project) ──────────── -->
+
+      <article class="project-card" data-category="research">
+        <div class="proj-header">
+          <span class="proj-tag tag-research">ML · Mechanistic Interpretability · Python</span>
+          <span class="proj-year">2026</span>
+        </div>
+        <h3>Why RL Forgets Less Than SFT — ICML 2026</h3>
+        <p>Co-authored a paper (published at ICML 2026) introducing <em>differential circuit vulnerability</em> to compare how RL vs. supervised fine-tuning preserve internal attention-head circuits in LLMs. RL retained 13.5 pp more base-circuit structure at peak task performance.</p>
+        <div class="proj-links">
+          <a href="https://arxiv.org/abs/2605.28860" class="proj-link" target="_blank" rel="noopener">arXiv →</a>
+          <a href="https://github.com/rl-sft-circuit-research/differential-circuit-vulnerability" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
       <!-- ── INTERNSHIP ─────────────────────────────────────────── -->
 
       <article class="project-card" data-category="data">
@@ -317,19 +386,6 @@
         </div>
       </article>
 
-      <article class="project-card" data-category="research">
-        <div class="proj-header">
-          <span class="proj-tag tag-research">ML · Mechanistic Interpretability · Python</span>
-          <span class="proj-year">2026</span>
-        </div>
-        <h3>Why RL Forgets Less Than SFT — ICML 2026</h3>
-        <p>Co-authored a paper (published at ICML 2026) introducing <em>differential circuit vulnerability</em> to compare how RL vs. supervised fine-tuning preserve internal attention-head circuits in LLMs. RL retained 13.5 pp more base-circuit structure at peak task performance.</p>
-        <div class="proj-links">
-          <a href="https://arxiv.org/abs/2605.28860" class="proj-link" target="_blank" rel="noopener">arXiv →</a>
-          <a href="https://github.com/rl-sft-circuit-research/differential-circuit-vulnerability" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
-
       <!-- ── WEB ─────────────────────────────────────────────────── -->
 
       <article class="project-card" data-category="web">
@@ -358,18 +414,22 @@
   <section id="contact">
     <span class="section-eyebrow">Let's talk</span>
     <h2 class="section-title">Get in touch</h2>
-    <p class="contact-sub">Whether it's an internship, collaboration, or just a conversation — I'm always happy to connect.</p>
+    <p class="contact-sub">
+      <strong>Currently seeking a 3-month internship (June – early September 2027)</strong>
+      in machine learning, deep learning R&amp;D or medical imaging AI — anywhere in the world.
+      I'm also open to a part-time / alternating internship starting February 2027.
+    </p>
 
     <div class="contact-cards">
-      <a href="mailto:yzongo@insa-rennes.fr" class="contact-card">
-        <img src="./assets/email.png" alt="" class="contact-icon" aria-hidden="true" />
+      <a href="mailto:yzongo@insa-rennes.fr?subject=Internship%20opportunity" class="contact-card">
+        <img src="./Assets/email.png" alt="" class="contact-icon" aria-hidden="true" />
         <div>
           <span class="contact-label">Email</span>
           <span class="contact-value">yzongo@insa-rennes.fr</span>
         </div>
       </a>
       <a href="https://www.linkedin.com/in/yannis-zongo-b16805253" target="_blank" rel="noopener" class="contact-card">
-        <img src="./assets/linkedin.png" alt="" class="contact-icon" aria-hidden="true" />
+        <img src="./Assets/linkedin.png" alt="" class="contact-icon" aria-hidden="true" />
         <div>
           <span class="contact-label">LinkedIn</span>
           <span class="contact-value">yannis-zongo-b16805253</span>
@@ -388,7 +448,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <p class="footer-copy">© 2025 Yannis Zongo · All rights reserved</p>
+    <p class="footer-copy">© 2026 Yannis Zongo · All rights reserved</p>
   </footer>
 
   <script src="script.js"></script>
